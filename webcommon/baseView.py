@@ -39,19 +39,4 @@ def addOption():
     return option
 
 
-if __name__ == "__main__":
-    driver = webdriver.Chrome()
-    driver.get('https://www.smzdm.com/')
-    driver.maximize_window()
-    click(driver,'link text','登录')
-    driver.switch_to.frame('J_login_iframe')
-    sendKeys(driver,'18620184526','id','username')
-    sendKeys(driver, 'yu311178', 'xpath', '//input[@id="password"]')
-    time.sleep(20)
 
-    my_config = configparser.ConfigParser()
-    config_path = '../config/webcookies.ini'
-    my_config.read('config_path')
-    with open('config_path','w') as fp:
-        my_config.set('smzdm','cookies',driver.get_cookies())
-        my_config.write(fp)
