@@ -45,8 +45,8 @@ if __name__ == "__main__":
     driver.maximize_window()
     click(driver,'link text','登录')
     driver.switch_to.frame('J_login_iframe')
-    sendKeys(driver,'18620184526','id','username')
-    sendKeys(driver, 'yu311178', 'xpath', '//input[@id="password"]')
+    sendKeys(driver,'username','id','username')
+    sendKeys(driver, 'password', 'xpath', '//input[@id="password"]')
     time.sleep(20)
 
     my_config = configparser.ConfigParser()
